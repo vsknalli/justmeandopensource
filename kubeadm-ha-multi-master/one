@@ -124,3 +124,22 @@ kubeadm join 192.168.56.100:6443 --token a9phku.ppizelsc8rn2f4hn \
 root@kmaster1:~# 
 
 
+
+TROUBLESHOOTING
+
+1. sudo apt-get install -y apt-transport-https ca-certificates curl gpg
+
+2. sudo mkdir -p -m 755 /etc/apt/keyrings
+
+3. curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.29/deb/Release.key | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
+
+4. echo 'deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.29/deb/ /' | sudo tee /etc/apt/sources.list.d/kubernetes.list
+
+5. apt-get update
+
+6. apt-get install -y kubelet kubeadm kubectl
+
+
+
+
+
