@@ -1,3 +1,15 @@
+
+
+192.168.56.100  loadbalancer.example.com  loadbalancer
+
+192.168.56.101  kubemaster1.example.com kubemaster1
+192.168.56.102  kubemaster2.example.com kubemaster2
+
+192.168.56.201  kubeworker1.example.com  kubeworker1
+192.168.56.202  kubeworker2.example.com  kubeworker2
+192.168.56.203  kubeworker3.example.com  kubeworker3
+
+
 kubeadm init --control-plane-endpoint="192.168.56.100:6443" --upload-certs --apiserver-advertise-address=192.168.56.101 --pod-network-cidr=192.168.0.0/16
 
 
